@@ -6,7 +6,7 @@ def extract_ngram(filepath, n):
     filepath : str
         Path to a text file containing tweets data.
     n : int
-        Number of n-grams to be created
+        Length of n-grams to be created
 
     Returns
     -------
