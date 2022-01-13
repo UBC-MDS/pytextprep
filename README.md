@@ -2,12 +2,17 @@
 
 This is a Python package that offers additional text preprocessing functionality specifically designed for tweets. The package bundles functions to help with cleaning and gaining insight into tweet data, providing additional resources for EDA or enabling feature engineering.
 
+
 The main functions of this package are:
 
-    1. `remove_punctuation`: Removes punctuation in a file with tweets
-    2. `extract_ngram`: Extracts n-grams from a file with tweets
-    3. `extract_hashtags`: Creates a list of hashtags from a file with tweets
-    4. `generate_cloud`: Creates a word cloud of the most frequent words in a file with tweets
+- `remove_punctuation` : Removes punctuation in a file with tweets
+    
+- `extract_ngram`: Extracts n-grams from a file with tweets
+    
+- `extract_hashtags`: Creates a list of hashtags from a file with tweets
+    
+- `generate_cloud`: Creates a word cloud of the most frequent words in a file with tweets
+
 
 In the Python ecosystem the only popular package focused on tweet data is [tweet-preprocessor](https://pypi.org/project/tweet-preprocessor/). Even though this package is also customized specifically for dealing with Tweeter data its scope is solely oriented to tokenizing and cleaning the tweets. In contrast, our package can be leveraged to extract new features out of tweets.
 
