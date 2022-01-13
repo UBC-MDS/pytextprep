@@ -28,7 +28,9 @@ Please note that this project is released with a Code of Conduct. By contributin
 
 ## License
 
-`pytextprep` was created by Arijeet Chatterjee, Joshua Sia, Melisa Maidana, Philson Chan. It is licensed under the terms of the MIT license.
+`pytextprep` was created by Arijeet Chatterjee, Joshua Sia, Melisa Maidana, Philson Chan (DSCI_524_GROUP21). 
+
+It is licensed under the terms of the MIT license.
 
 ## Credits
 
