@@ -3,6 +3,7 @@
 This is a Python package that offers additional text preprocessing functionality specifically designed for tweets. The package bundles functions to help with cleaning and gaining insight into tweet data, providing additional resources for EDA or enabling feature engineering.
 
 The main functions of this package are:
+
     1. `remove_punctuation`: Removes punctuation in a file with tweets
     2. `extract_ngram`: Extracts n-grams from a file with tweets
     3. `extract_hashtags`: Creates a list of hashtags from a file with tweets
