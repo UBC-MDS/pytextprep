@@ -28,6 +28,8 @@ $ pip install pytextprep
 
 ## Contributing
 
+Contributors: Arijeet Chatterjee, Joshua Sia, Melisa Maidana, Philson Chan (DSCI_524_GROUP21).
+
 Interested in contributing? Check out the [contributing guidelines](https://github.com/UBC-MDS/pytextprep/blob/main/CONTRIBUTING.md). 
 
 Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
