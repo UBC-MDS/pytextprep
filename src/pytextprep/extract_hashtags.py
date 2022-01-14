@@ -16,7 +16,7 @@ def extract_hashtags(tweets):
         "Make America Great Again! @DonaldTrump",
         "It's rocket-science tier investment~~ #LoveElonMusk"
     ]
-    >>>extract_hashtags("tweets.txt")
+    >>>extract_hashtags(tweets_list)
     [
         "LoveElonMusk"
     ]
