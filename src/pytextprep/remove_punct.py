@@ -4,8 +4,8 @@ def remove_punct(tweets, skip=None):
 
     Parameters
     ----------
-    tweets : str
-        Path to a text file containing tweets
+    tweets : array_like
+        List of tweets 
 
     skip : array_like or None, optional
         The set of characters that do not have to be removed.
@@ -19,18 +19,18 @@ def remove_punct(tweets, skip=None):
 
     Examples
     --------
-    # Sample contents in tweets.txt:
-    #
-    # Make America Great Again! @DonaldTrump
-    # It's rocket-science tier investment~~ #LoveElonMusk
+    >>> tweets_list = [
+        "Make America Great Again! @DonaldTrump",
+        "It's rocket-science tier investment~~ #LoveElonMusk"
+    ]
 
-    >>> remove_punct("tweets.txt")
+    >>> remove_punct(tweets_list)
     [
         "Make America Great Again DonaldTrump",
         "Its rocketscience tier investment LoveElonMusk"
     ]   
 
-    >>> remove_punct("tweets.txt", skip=["'", "@", "#", '-'])
+    >>> remove_punct(tweet_list, skip=["'", "@", "#", '-'])
     [
         "Make America Great Again @DonaldTrump",
         "It's rocket-science tier investment #LoveElonMusk"
