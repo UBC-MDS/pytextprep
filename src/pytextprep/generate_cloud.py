@@ -4,8 +4,8 @@ def generate_cloud(tweets):
     
     Parameters
     ----------
-    tweets : str
-        Path to a text file containing tweets.
+    tweets : array_like
+        List of tweets.
 
     Returns
     -------
@@ -14,5 +14,9 @@ def generate_cloud(tweets):
 
     Examples
     --------
-    >>> generate_cloud("tweets.txt")
+    >>> tweets = [
+        "Make America Great Again! @DonaldTrump",
+        "It's rocket-science tier investment~~ #LoveElonMusk"
+    ]
+    >>> generate_cloud(tweets)
     """
