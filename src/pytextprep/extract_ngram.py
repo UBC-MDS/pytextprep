@@ -3,8 +3,8 @@ def extract_ngram(filepath, n):
     
     Parameters
     ----------
-    filepath : str
-        Path to a text file containing tweets data.
+    tweets : array_like
+        List of tweets
     n : int
         Length of n-grams to be created
 
@@ -15,5 +15,13 @@ def extract_ngram(filepath, n):
 
     Examples
     --------
-    >>> extract_ngram("tweets.txt", 4)
+    >>> tweets_list =[
+        "Make America Great Again DonaldTrump",
+    ]  
+    >>> extract_ngram(tweets=tweets_list, n=3)
+    [
+        "Make America Great",
+        "America Great Again",
+        "Great Again DonaldTrump"
+    ]
     """
