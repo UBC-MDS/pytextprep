@@ -1,4 +1,4 @@
-def extract_ngram(filepath, n):
+def extract_ngram(tweets, n):
     """Extracts n-grams from the input tweet data
     
     Parameters
