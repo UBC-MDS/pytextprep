@@ -7,7 +7,7 @@ helps, and credit will always be given.
 
 ### Report Bugs
 
-If you are reporting a bug, please include:
+If you are reporting a bug, please open a GitHub issue, which include:
 
 * Your operating system name and version.
 * Any details about your local setup that might be helpful in troubleshooting.
@@ -57,7 +57,9 @@ Ready to contribute? Here's how to set up `pytextprep` for local development.
 
 4. When you're done making changes, check that your changes conform to any code formatting requirements and pass any tests.
 
-5. Commit your changes and open a pull request.
+5. Commit your changes. Please write meaningful commit messages to summarize your changes. Please refer to [this article](https://cbea.ms/git-commit/) as a proper guideline of commit messages.
+
+6. Open a pull request when you finish the implementation of a feature or fix a bug. The administrators will review the content of the pull request within 1 week.
 
 ## Pull Request Guidelines
 
@@ -66,8 +68,10 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include additional tests if appropriate.
 2. If the pull request adds functionality, the docs should be updated.
 3. The pull request should work for all currently supported operating systems and versions of Python.
+4. The pull request shall include a brief description that explain the modification made and purpose of improvement.
 
 ## Code of Conduct
 
 Please note that the `pytextprep` project is released with a 
-Code of Conduct. By contributing to this project you agree to abide by its terms.
+[Code of Conduct](https://github.com/UBC-MDS/pytextprep/blob/main/CONDUCT.md). 
+By contributing to this project you agree to abide by its terms.
