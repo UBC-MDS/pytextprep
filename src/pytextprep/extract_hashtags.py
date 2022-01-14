@@ -3,13 +3,21 @@ def extract_hashtags(tweets):
     
     Parameters
     ----------
-    tweets : str
-        Path to a text file containing tweets.
+    tweets : array_like
+        List of tweets
+
     Returns
     -------
     list
-        List of hashtags included in the tweets file
+        List of hashtags included in the tweets list
     Examples
     --------
-    >>> extract_hashtags("tweets.txt")
+    >>>tweets_list = [
+        "Make America Great Again! @DonaldTrump",
+        "It's rocket-science tier investment~~ #LoveElonMusk"
+    ]
+    >>>extract_hashtags(tweets_list)
+    [
+        "LoveElonMusk"
+    ]
     """
