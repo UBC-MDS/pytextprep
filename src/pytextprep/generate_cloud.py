@@ -26,11 +26,11 @@ def generate_cloud(tweets, type="words"):
     >>> from pytextprep.generate_cloud import generate_cloud
     >>> import matplotlib.pyplot as plt
     >>> tweets = [
-        "Make America Great Again! @DonaldTrump",
-        "It's rocket-science tier investment~~ #LoveElonMusk"
+        "Make America Great Again! @DonaldTrump #America",
+        "It's rocket-science tier investment~~ #LoveElonMusk",
+        "America America America"
     ]
-    >>> tweets = ["their your down to America"]
-    >>> fig = generate_cloud(tweets)
+    >>> fig, wc = generate_cloud(tweets)
     >>> plt.show()
     """
 
@@ -40,6 +40,10 @@ def generate_cloud(tweets, type="words"):
     if not isinstance(tweets, list):
         raise TypeError("Argument tweets should be of type list.")
 
+    # Check length of argument tweets
+    if len(tweets) < 1:
+        raise ValueError("Make sure argument tweets contains at least one message")
+
     # Check input argument type
     if type not in {"words", "hashtag", "stopwords"}:
         raise ValueError("Make sure the argument type is one of the accepted values")
@@ -47,22 +51,27 @@ def generate_cloud(tweets, type="words"):
     # Remove punctuation
     # tweets = remove_punct(tweets)
 
-    # Convert list to string
     if type == "words":
         text = (" ".join(tweets)).lower()
+        wordcloud = WordCloud(
+            max_words=50, background_color="white", stopwords={}
+            ).generate(text)
     elif type == "hashtag":
         # tweets = extract_hashtags(tweets)
         text = (" ".join(tweets)).lower()
+        wordcloud = WordCloud(
+            max_words=50, background_color="white", stopwords={}
+            ).generate(text)
     elif type == "stopwords":
         text = (" ".join(tweets)).lower()
         text = " ".join([_ for _ in text.split() if _ not in stopwords.words("english")])
-
-    # Generate word cloud
-    wordcloud = WordCloud(max_words=50, background_color="white").generate(text)
-
+        wordcloud = WordCloud(
+            max_words=50, background_color="white"
+            ).generate(text)
+    
     # Plot word cloud
     fig = plt.figure()
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
 
-    return fig
+    return fig, wordcloud
