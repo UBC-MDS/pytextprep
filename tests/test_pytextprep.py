@@ -31,6 +31,9 @@ def test_generate_cloud():
     with pytest.raises(ValueError):
         generate_cloud([])
 
+    with pytest.raises(ValueError):
+        generate_cloud(["vaild", 3, "valid"])
+
     assert isinstance(fig_words, matplotlib.figure.Figure), \
         "Wrong output type"
 

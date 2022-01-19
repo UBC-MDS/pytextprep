@@ -44,6 +44,10 @@ def generate_cloud(tweets, type="words"):
     if len(tweets) < 1:
         raise ValueError("Make sure argument tweets contains at least one message")
 
+    # Check that argument tweets only contains strings
+    if not all(isinstance(_, str) for _ in tweets):
+        raise ValueError("Make sure argument tweets only contains strings")
+
     # Check input argument type
     if type not in {"words", "hashtag", "stopwords"}:
         raise ValueError("Make sure the argument type is one of the accepted values")
