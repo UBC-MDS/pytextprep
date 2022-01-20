@@ -1,3 +1,6 @@
+import re
+import numpy as np
+
 def remove_punct(tweets, skip=None):
     """Remove all punctuation and special characters from the
     input tweets data
@@ -37,3 +40,20 @@ def remove_punct(tweets, skip=None):
     ]
 
     """
+    if not hasattr(tweets, "__len__") or isinstance(tweets, str):
+        raise TypeError("Tweets must be array_like Object")
+    orig_shape = None
+    if isinstance(tweets, np.ndarray) and (len(tweets.shape) > 1):
+        orig_shape = tweets.shape
+        tweets = tweets.flatten()
+    out_tweets = tweets.copy()
+    for i, t in enumerate(tweets):
+        if skip is None:
+            punct_regex = f"[^A-Za-z\s\d]"
+        else:        
+            punct_regex = f"[^A-Za-z\s\d{''.join(skip)}]"
+        t_no_punct = re.sub(punct_regex, "", t)
+        out_tweets[i] = t_no_punct
+    if orig_shape is not None:
+        out_tweets = out_tweets.reshape(*orig_shape)
+    return out_tweets
