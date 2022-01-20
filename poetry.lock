@@ -205,6 +205,7 @@ lock-version = "1.1"
 python-versions = "^3.9"
 content-hash = "886bb91225142bd1eba2e6d8f16c04e47166fc07e8056c24852191e9777e4745"
 
+
 [metadata.files]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
