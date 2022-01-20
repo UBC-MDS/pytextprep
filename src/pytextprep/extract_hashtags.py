@@ -32,4 +32,5 @@ def extract_hashtags(tweets):
     
     # Break tweets into individual words
     htags = re.findall(r'(#[A-Za-z0-9]*)', text)
+    htags = [ht.replace('#', '') for ht in htags]
     return htags
