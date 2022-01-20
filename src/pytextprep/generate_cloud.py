@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from pytextprep.extract_hashtags import extract_hashtags
 from wordcloud import WordCloud
 import nltk
 from nltk.corpus import stopwords
@@ -28,7 +29,7 @@ def generate_cloud(tweets, type="words"):
     >>> tweets = [
         "Make America Great Again! @DonaldTrump #America",
         "It's rocket-science tier investment~~ #LoveElonMusk",
-        "America America America"
+        "America America America #USA #USA"
     ]
     >>> fig, wc = generate_cloud(tweets)
     >>> plt.show()
@@ -52,16 +53,13 @@ def generate_cloud(tweets, type="words"):
     if type not in {"words", "hashtag", "stopwords"}:
         raise ValueError("Make sure the argument type is one of the accepted values")
 
-    # Remove punctuation
-    # tweets = remove_punct(tweets)
-
     if type == "words":
         text = (" ".join(tweets)).lower()
         wordcloud = WordCloud(
             max_words=50, background_color="white", stopwords={}
             ).generate(text)
     elif type == "hashtag":
-        # tweets = extract_hashtags(tweets)
+        tweets = extract_hashtags(tweets)
         text = (" ".join(tweets)).lower()
         wordcloud = WordCloud(
             max_words=50, background_color="white", stopwords={}
