@@ -1,3 +1,5 @@
+import re
+
 def extract_hashtags(tweets):
     """Extracts all hashtags included in the input tweet data file
     
@@ -21,3 +23,14 @@ def extract_hashtags(tweets):
         "LoveElonMusk"
     ]
     """
+    # Check for correct input type
+    if not isinstance(tweets, list):
+        raise TypeError("'tweets' should be of type 'list'.")
+
+    # Convert array like input to string
+    text =  " ".join(tweets)
+    
+    # Break tweets into individual words
+    htags = re.findall(r'(#[A-Za-z0-9]*)', text)
+    htags = [ht.replace('#', '') for ht in htags]
+    return htags
