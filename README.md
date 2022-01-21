@@ -60,7 +60,7 @@ fig, wc = generate_cloud(tweets_list)
 plt.show()
 ```
 
-![word_cloud](https://github.com/UBC-MDS/pytextprep/blob/docs_add_usage_readme/docs/word_cloud.png)
+![word_cloud](https://github.com/UBC-MDS/pytextprep/blob/main/docs/word_cloud.png)
 
 ## Contributing
 
