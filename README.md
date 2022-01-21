@@ -5,13 +5,13 @@ This is a Python package that offers additional text preprocessing functionality
 
 The main functions of this package are:
 
-- `remove_punctuation` : Removes punctuation in a file with tweets
+- `remove_punctu` : Removes punctuation from a list of tweets
     
-- `extract_ngram`: Extracts n-grams from a file with tweets
+- `extract_ngram`: Extracts n-grams from a list of tweets
     
-- `extract_hashtags`: Creates a list of hashtags from a file with tweets
+- `extract_hashtags`: Creates a list of hashtags from a list of tweets
     
-- `generate_cloud`: Creates a word cloud of the most frequent words in a file with tweets
+- `generate_cloud`: Creates a word cloud of the most frequent words from a list of tweets
 
 
 In the Python ecosystem the only popular package focused on tweet data is [tweet-preprocessor](https://pypi.org/project/tweet-preprocessor/). Even though this package is also customized specifically for dealing with Tweeter data its scope is solely oriented to tokenizing and cleaning the tweets. In contrast, our package can be leveraged to extract new features out of tweets.
@@ -24,7 +24,15 @@ $ pip install pytextprep
 
 ## Usage
 
-- TODO
+```python
+from pytextprep.extract_ngram import extract_ngram
+tweets_list = ["Make America Great Again! @DonalTrump", "It's a new day in America"]
+extract_ngram(tweets_list, n=3)
+```
+
+```
+['Make America Great', 'America Great Again!', 'Great Again! @DonalTrump', "Again! @DonalTrump It's", "@DonalTrump It's a", "It's a new", 'a new day', 'new day in', 'day in America']
+```
 
 ## Contributing
 
