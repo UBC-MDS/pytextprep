@@ -33,7 +33,7 @@ def remove_punct(tweets, skip=None):
         "Its rocketscience tier investment LoveElonMusk"
     ]   
 
-    >>> remove_punct(tweet_list, skip=["'", "@", "#", '-'])
+    >>> remove_punct(tweets_list, skip=["'", "@", "#", '-'])
     [
         "Make America Great Again @DonaldTrump",
         "It's rocket-science tier investment #LoveElonMusk"
