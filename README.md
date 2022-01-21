@@ -60,6 +60,8 @@ fig, wc = generate_cloud(tweets_list)
 plt.show()
 ```
 
+![word_cloud](https://github.com/UBC-MDS/pytextprep/blob/docs_add_usage_readme/docs/word_cloud.png)
+
 ## Contributing
 
 Contributors: Arijeet Chatterjee, Joshua Sia, Melisa Maidana, Philson Chan (DSCI_524_GROUP21).
