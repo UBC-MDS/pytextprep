@@ -5,7 +5,7 @@ This is a Python package that offers additional text preprocessing functionality
 
 The main functions of this package are:
 
-- `remove_punctu` : Removes punctuation from a list of tweets
+- `remove_punct` : Removes punctuation from a list of tweets
     
 - `extract_ngram`: Extracts n-grams from a list of tweets
     
