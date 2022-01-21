@@ -1,7 +1,7 @@
 import re
 
 def extract_hashtags(tweets):
-    """Extracts all hashtags included in the input tweet data file
+    """Extracts all hashtags included in the input tweet data
     
     Parameters
     ----------
