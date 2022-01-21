@@ -19,7 +19,7 @@ In the Python ecosystem the only popular package focused on tweet data is [tweet
 ## Installation
 
 ```bash
-$ pip install pytextprep
+pip install git+https://github.com/UBC-MDS/pytextprep
 ```
 
 ## Usage
