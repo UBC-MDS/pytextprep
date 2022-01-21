@@ -26,12 +26,38 @@ $ pip install pytextprep
 
 ```python
 from pytextprep.extract_ngram import extract_ngram
-tweets_list = ["Make America Great Again! @DonalTrump", "It's a new day in America"]
+from pytextprep.extract_hashtags import extract_hashtags
+from pytextprep.remove_punct import remove_punct
+from pytextprep.generate_cloud import generate_cloud
+import matplotlib.pyplot as plt
+
+tweets_list = ["Make America Great Again! @DonalTrump", "It's a new day in #America"]
 extract_ngram(tweets_list, n=3)
 ```
 
 ```
-['Make America Great', 'America Great Again!', 'Great Again! @DonalTrump', "Again! @DonalTrump It's", "@DonalTrump It's a", "It's a new", 'a new day', 'new day in', 'day in America']
+['Make America Great', 'America Great Again!', 'Great Again! @DonalTrump', "Again! @DonalTrump It's", "@DonalTrump It's a", "It's a new", 'a new day', 'new day in', 'day in #America']
+```
+
+```python
+extract_hashtags(tweets_list)
+```
+
+```
+['America']
+```
+
+```python
+remove_punct(tweets_list, skip=["'", "@", "#", '-'])
+```
+
+```
+['Make America Great Again @DonalTrump', "It's a new day in #America"]
+```
+
+```python
+fig, wc = generate_cloud(tweets_list)
+plt.show()
 ```
 
 ## Contributing
