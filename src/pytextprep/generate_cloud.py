@@ -64,7 +64,7 @@ def generate_cloud(tweets, type="words"):
         wordcloud = WordCloud(
             max_words=50, background_color="white", stopwords={}
             ).generate(text)
-    elif type == "stopwords":
+    else:
         text = (" ".join(tweets)).lower()
         text = " ".join([_ for _ in text.split() if _ not in stopwords.words("english")])
         wordcloud = WordCloud(
