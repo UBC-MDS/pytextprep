@@ -12,13 +12,14 @@ def extract_hashtags(tweets):
     -------
     list
         List of hashtags included in the tweets list
+
     Examples
     --------
-    >>>tweets_list = [
+    >>> tweets_list = [
         "Make America Great Again! @DonaldTrump",
         "It's rocket-science tier investment~~ #LoveElonMusk"
     ]
-    >>>extract_hashtags(tweets_list)
+    >>> extract_hashtags(tweets_list)
     [
         "LoveElonMusk"
     ]
