@@ -52,7 +52,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Pre-Step 4
+    # Step 4. Install poetry
+    - uses: snok/install-poetry@v1
+
+    # Step 5
     - name: Temporarily disable "include administrators" branch protection
       uses: benjefferies/branch-protection-bot@master
       if: always()
@@ -62,7 +65,7 @@ jobs:
           enforce_admins: false
 
 
-    # Step 4.1 Use PSR via Poetry to make release
+    # Step 6.1 Use PSR via Poetry to make release
     - name: Bump version and tagging and publish
       run: |
         git config --local user.email "action@github.com"
@@ -72,13 +75,13 @@ jobs:
         poetry version $(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
         git commit -m "[skip actions] Bump versions" -a
     
-    # Step 4.2 Push the changes to the repo
+    # Step 6.2 Push the changes to the repo
     - name: Push package version changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
 
-    # Post Step 4
+    # Step 7
     - name: Enable "include administrators" branch protection
       uses: benjefferies/branch-protection-bot@master
       if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
@@ -87,21 +90,21 @@ jobs:
         branch: main
         enforce_admins: true
 
-    # Step 5. Publish to TestPyPI
+    # Step 8. Publish to TestPyPI
     - uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         repository_url: https://test.pypi.org/legacy/
         skip_existing: true
-    # Step 6. Test install from TestPyPI
+    # Step 9. Test install from TestPyPI
     - name: Test install from TestPyPI
       run: |
           pip install \
           --index-url https://test.pypi.org/simple/ \
           --extra-index-url https://pypi.org/simple \
           pytextprep
-    # Step 7. Publish to PyPI
+    # Step 10. Publish to PyPI
     - uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
