@@ -62,13 +62,21 @@ jobs:
           enforce_admins: false
 
 
-    # Step 4. Use PSR to make release
-    - name: Python Semantic Release
+    # Step 4.1 Use PSR via Poetry to make release
+    - name: Bump version and tagging and publish
       run: |
-          pip install python-semantic-release
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          semantic-release publish
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull origin main
+        poetry run semantic-release version
+        poetry version $(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
+        git commit -m "[skip actions] Bump versions" -a
+    
+    # Step 4.2 Push the changes to the repo
+    - name: Push package version changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
 
     # Post Step 4
     - name: Enable "include administrators" branch protection
