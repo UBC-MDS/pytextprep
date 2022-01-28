@@ -19,13 +19,13 @@ In the Python ecosystem the only popular package focused on tweet data is [tweet
 
 ## Installation
 
-Install from source:
-
 ```bash
-pip install git+https://github.com/UBC-MDS/pytextprep
+$ pip install pytextprep
 ```
 
 ## Usage
+
+[Documentation](https://pytextprep.readthedocs.io/en/latest/index.html)
 
 ```python
 from pytextprep.extract_ngram import extract_ngram
