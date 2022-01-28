@@ -76,8 +76,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git pull origin main
         poetry run semantic-release version
-        poetry version $(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
-        git commit -m "[skip actions] Bump versions" -a
+        git commit -m "[skip actions] Bump versions $(grep "version =" pyproject.toml | cut -d "'" -f 2 | cut -d '"' -f 2)" -a
     
     # Step 6.2 Push the changes to the repo
     - name: Push package version changes
