@@ -96,7 +96,7 @@ jobs:
 
     # Step 8. Build Package
     - name: Build pytextprep with Poetry
-    - run: poetry build
+      run: poetry build
 
     # Step 9. Publish to TestPyPI
     - uses: pypa/gh-action-pypi-publish@release/v1
