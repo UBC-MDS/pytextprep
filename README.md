@@ -1,3 +1,4 @@
+[![ci-cd](https://github.com/UBC-MDS/pytextprep/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/pytextprep/actions/workflows/ci-cd.yml)
 # pytextprep
 
 This is a Python package that offers additional text preprocessing functionality specifically designed for tweets. The package bundles functions to help with cleaning and gaining insight into tweet data, providing additional resources for EDA or enabling feature engineering.
