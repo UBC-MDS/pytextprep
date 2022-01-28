@@ -52,12 +52,8 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Step 4.1 Install poetry
+    # Step 4. Install poetry
     - uses: snok/install-poetry@v1
-
-    # Step 4.2 Install our package
-    - name: Install package
-      run: poetry install
 
     # Step 5
     - name: Temporarily disable "include administrators" branch protection
