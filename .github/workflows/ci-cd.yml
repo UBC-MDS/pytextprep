@@ -52,8 +52,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Step 4. Install poetry
+    # Step 4.1 Install poetry
     - uses: snok/install-poetry@v1
+
+    # Step 4.2 Install our package
+    - name: Install package
+      run: poetry install
 
     # Step 5
     - name: Temporarily disable "include administrators" branch protection
@@ -72,8 +76,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git pull origin main
         poetry run semantic-release version
-        poetry version $(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
-        git commit -m "[skip actions] Bump versions" -a
+        git commit -m "[skip actions] Bump versions $(grep "version =" pyproject.toml | cut -d "'" -f 2 | cut -d '"' -f 2)" -a
     
     # Step 6.2 Push the changes to the repo
     - name: Push package version changes
