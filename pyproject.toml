@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytextprep"
-version = "1.0.4"
+version = "1.0.5"
 description = "Performs pre-processing of tweets"
 authors = ["Arijeet Chatterjee, Joshua Sia, Melisa Maidana, Philson Chan"]
 license = "MIT"
