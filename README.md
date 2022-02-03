@@ -55,7 +55,7 @@ conda activate pytextprep
 Install the `wordcloud` package:
 
 ```bash
-conda install -c conda-forge wordcloud
+conda install -c conda-forge wordcloud -y
 ```
 
 Install the package:
