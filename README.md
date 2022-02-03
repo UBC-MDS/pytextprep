@@ -38,6 +38,40 @@ pip install .
 
 [Documentation](https://pytextprep.readthedocs.io/en/latest/index.html)
 
+Please follow the steps below:
+
+Create a new conda environment named `pytextprep`:
+
+```bash
+conda create --name pytextprep python=3.9 -y
+```
+
+Activate the conda environment `pytextprep`:
+
+```bash
+conda activate pytextprep
+```
+
+Install the `wordcloud` package:
+
+```bash
+conda install -c conda-forge wordcloud -y
+```
+
+Install the package:
+
+```bash
+pip install pytextprep
+```
+
+Open Python:
+
+```bash
+python
+```
+
+You can now use the package functions as:
+
 ```python
 from pytextprep.extract_ngram import extract_ngram
 from pytextprep.extract_hashtags import extract_hashtags
