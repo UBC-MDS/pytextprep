@@ -52,16 +52,16 @@ Activate the conda environment `pytextprep`:
 conda activate pytextprep
 ```
 
-Install the `wordcloud` package:
-
-```bash
-conda install -c conda-forge wordcloud -y
-```
-
 Install the package:
 
 ```bash
 pip install pytextprep
+```
+
+If the package fails to install due to the `wordcloud` package, please install `wordcloud` using the following command and then install `pytextprep` again.
+
+```bash
+conda install -c conda-forge wordcloud -y
 ```
 
 Open Python:
